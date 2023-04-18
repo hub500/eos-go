@@ -4,10 +4,10 @@ import eos "github.com/armoniax/eos-go"
 
 func NewCreate(issuer eos.AccountName, maxSupply eos.Asset) *eos.Action {
 	return &eos.Action{
-		Account: AN("eosio.token"),
+		Account: AN("amax.token"),
 		Name:    ActN("create"),
 		Authorization: []eos.PermissionLevel{
-			{Actor: AN("eosio.token"), Permission: PN("active")},
+			{Actor: AN("amax.token"), Permission: PN("active")},
 		},
 		ActionData: eos.NewActionData(Create{
 			Issuer:        issuer,
